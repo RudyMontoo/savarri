@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - SAVARII</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="search.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navbar (same as index.html) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <i data-lucide="plane"></i>
+        <span>SAVARII</span>
+      </a>
+      <div class="nav-links">
+        <a href="/search.html">Plan Trip</a>
+        <a href="/login.html" class="login-link">
+          <i data-lucide="user"></i>
+          <span>Login</span>
+        </a>
+      </div>
+      <button class="mobile-menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <main class="search-page">
+    <div class="search-container">
+      <div class="search-card">
+        <h1>Plan Your Journey</h1>
+        
+        <form id="searchForm" class="search-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="from">From</label>
+              <div class="input-icon">
+                <i data-lucide="map-pin"></i>
+                <input type="text" id="from" required placeholder="City or Airport">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="to">To</label>
+              <div class="input-icon">
+                <i data-lucide="map-pin"></i>
+                <input type="text" id="to" required placeholder="City or Airport">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="depart">Depart</label>
+              <div class="input-icon">
+                <i data-lucide="calendar"></i>
+                <input type="date" id="depart" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="return">Return</label>
+              <div class="input-icon">
+                <i data-lucide="calendar"></i>
+                <input type="date" id="return">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="passengers">Passengers</label>
+              <div class="input-icon">
+                <i data-lucide="users"></i>
+                <select id="passengers">
+                  <option value="1">1 passenger</option>
+                  <option value="2">2 passengers</option>
+                  <option value="3">3 passengers</option>
+                  <option value="4">4 passengers</option>
+                  <option value="5">5 passengers</option>
+                  <option value="6">6 passengers</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="search-button">
+            <i data-lucide="search"></i>
+            Search Transportation Options
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (same as index.html) -->
+  <footer class="footer">
+    <!-- Footer content same as index.html -->
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    
+    document.getElementById('searchForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.location.href = '/transport-results.html';
+    });
+  </script>
+</body>
+</html>
